@@ -1,4 +1,4 @@
-interactive -p nocona -c 4 -m 4G
+interactive -p nocona -c 4 -m 8G
 
 cd references
 
