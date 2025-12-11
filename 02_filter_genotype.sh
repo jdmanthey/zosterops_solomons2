@@ -121,3 +121,15 @@ gzip -cd ${workdir}/03_vcf/${basename_array}.vcf.gz | grep -v "^#" | \
 wc -l >> ${basename_array}.stats
 
 
+# contam check
+# extract all heterozygous sites for this individual
+vcftools --gzvcf ${workdir}/03_vcf/${basename_array}.vcf.gz --min-alleles 2 --max-alleles 2 \
+--maf 0.5 --recode --recode-INFO-all --out ${workdir}/03_contam/${basename_array}
+
+# extract the depth info for all the sites retained
+bcftools query -f '%DP4\n' ${workdir}/03_contam/${basename_array}.recode.vcf > \
+${workdir}/03_contam/${basename_array}.dp
+
+# make a histogram of MAF sequencing depth proportion
+Rscript contam_check.r ${workdir}/03_contam/${basename_array}.dp ${basename_array}
+
