@@ -6,10 +6,10 @@ args <- commandArgs(trailingOnly = TRUE)
 # what do you want to calculate or use?
 calc_heterozygosity <- TRUE		# calculate observed heterozygosity for every individual
 calc_pi <- FALSE				# calculate pi, theta, Tajima's D for each population with N >= calc_pi_minN
-calc_diff <- FALSE				# calculate pairwise FST and DXY for all pairwise comps. of pops with 
+calc_diff <- TRUE				# calculate pairwise FST and DXY for all pairwise comps. of pops with 
 									# N >= calc_diff_minN
 calc_FIS <- FALSE				# calculate FIS for all pops with N >= calc_FIS_minN
-calc_genetic_distance <- TRUE	# calculate genetic distance matrices
+calc_genetic_distance <- FALSE	# calculate genetic distance matrices
 calc_polymorphisms <- FALSE		# calculate private, shared, fixed polymorphisms in all pops with 
 									# N >= calc_polymorphisms_minN
 calc_titv <- TRUE				# calculate transition / transversion ratio of entire dataset
