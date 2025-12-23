@@ -24,7 +24,7 @@ output_script_name <- "01_stat_array.sh"
 ref_index <- read.table("bZosLat1_subset.fai", stringsAsFactors=F)
 
 # define window size
-window_size <- 100000
+window_size <- 25000
 
 ######################################
 ######################################
