@@ -13,7 +13,7 @@ x_end <- sapply(strsplit(sapply(strsplit(x_names, "__"), "[[", 3), ".tre"), "[["
 output <- data.frame(chrom=as.character(x_chrom), start=as.numeric(x_start), end=as.numeric(x_end))
 
 # write tree info
-write.table(output, file="zosterops_100kbp_tree_info.txt", sep="\t", quote=F, row.names=F, col.names=F)
+write.table(output, file="zosterops_25kbp_tree_info.txt", sep="\t", quote=F, row.names=F, col.names=F)
 
 # trees into one file
 tree_list <- list()
@@ -27,4 +27,4 @@ for(a in 1:length(tree_list)) {
 	}
 }
 tree_list <- unlist(tree_list)
-write(tree_list, file="zosterops_100kbp.trees", ncolumns=1)
+write(tree_list, file="zosterops_25kbp.trees", ncolumns=1)
